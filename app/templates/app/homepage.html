@@ -1,0 +1,30 @@
+{% extends 'app/structure.html' %}
+
+{% load static %}
+
+
+{% block header_title %}
+Alien's blog - Homepage
+{% endblock header_title %}
+
+
+{% block main_heading %}
+Alien's blog
+{% endblock main_heading %}
+
+
+{% block sub_heading %}
+A blog for all the aliens
+{% endblock sub_heading %}
+
+
+{% block main_image %}{% static 'app/img/post-bg.jpg' %}{% endblock main_image %}
+
+
+{% block main_content %}
+{% for post in posts %}
+    {% include 'app/block_card.html' with post=post %}
+    <hr class="my 4">
+{% endfor %}
+{% endblock main_content %}
+
